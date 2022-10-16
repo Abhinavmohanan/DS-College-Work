@@ -7,7 +7,7 @@ typedef struct{
 }sparse;
 
 float readtoSparse(sparse a[]){
-    int m,n,spar,element,k=1;
+    int m,n,spar=0,element,k=1;
     float sparsity;
     printf("Enter no. of rows of matrix: ");
     scanf("%d",&m);
