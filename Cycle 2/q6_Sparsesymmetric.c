@@ -42,11 +42,6 @@ void printSparse(sparse a[]){
 void sparsesym(sparse a[]){
     int flag;
     int i,j;
-    if(a[0].row != b[0].row || a[0].col != b[0].col)
-    {
-        printf("Not Sparse Symmetric");
-        exit(0);
-    }
     for(i=1;i<=a[0].val;i++){
         flag = 0;
         for(j=1;j<=a[0].val;j++){
@@ -68,7 +63,6 @@ void sparsesym(sparse a[]){
         }
     }
     printf("Sparse Symmetric");
-
 }
 
 void main(){
