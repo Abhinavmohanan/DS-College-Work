@@ -98,9 +98,10 @@ void main(){
             if(option == 1){
             while (1)
             {
-                printf("Enter Popped element: ");
+                printf("Popped element: ");
                 printf("%d",pop());
                 getchar();
+                printf("\n");
                 printf("Enter c to continue , m for main menu , e to end");
                 c = getchar();
                 if (c == 'c')
@@ -120,8 +121,9 @@ void main(){
             else{
             while(1)
             {
-            	printf("Enter Popped element: ");
+            	printf("Popped element: ");
                 printf("%d",pop2());
+                printf("\n");
                 getchar();
                 printf("Enter c to continue , m for main menu , e to end");
                 c = getchar();

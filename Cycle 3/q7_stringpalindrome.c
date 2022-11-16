@@ -29,11 +29,11 @@ char pop(){
 
 void checkPalindrome(char str[]){
 	int i=0;
-	while(i < (n-1)/2){
+	while(i < n/2){
 		push(str[i]);
 		i++;
 	}
-	if((n-1)%2 == 0){
+	if(n%2 != 0){
 		i++;
 	}
 	while(i< n){

@@ -9,7 +9,7 @@ void push(int item){
 		exit(0);	
 	}
 	else{
-		while(item>stack[tos] && tos!= -1){
+		while(item<stack[tos] && tos!= -1){
 			tempstack[++temptos] = stack[tos--];
 		}
 		stack[++tos] = item;
@@ -35,9 +35,11 @@ void display(){
 		printf("Stack Underflow");
 		exit(0);
 	}
-	while(tos >= 0){
-	 printf("%d ",pop());
+    	int n = tos;
+	while(n >= 0){
+	 printf("%d ",stack[n--]);
 	}
+	printf("\n");
 }
 
 void main(){

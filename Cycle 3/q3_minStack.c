@@ -25,10 +25,22 @@ int pop(){
 		exit(0);
 	}
 	else{
-		if(min[mintos] == stack[tos--]){
+        int element = stack[tos--];
+		if(min[mintos] == element){
 			mintos--;
 		}
-	 	return stack[tos];
+	 	return element;
+	}
+}
+
+void display(){
+	if(tos < 0){
+		printf("Stack Underflow");
+		exit(0);
+	}
+    int n = tos;
+	while(n >= 0){
+	 printf("%d ",stack[n--]);
 	}
 }
 
@@ -39,7 +51,7 @@ void main(){
 	stack = (int*) calloc(n,sizeof(int));
 	while (1)
     	{
-        printf("Enter option to continue:\n1.Push\n2.Pop\n3.MinElement\n");
+        printf("Enter option to continue:\n1.Push\n2.Pop\n3.Display\n4.MinElement\n");
         scanf("%d", &option);
         if (option == 1)
         {
@@ -49,7 +61,7 @@ void main(){
                 scanf("%d", &element);
                 push(element);
                 getchar();
-                printf("Enter c to continue , m for main menu , e to end");
+                printf("Enter c to continue , m for main menu , e to end: ");
                 c = getchar();
                 if (c == 'c')
                 {
@@ -72,7 +84,7 @@ void main(){
                 printf("Enter Popped element: ");
                 printf("%d",pop());
                 getchar();
-                printf("Enter c to continue , m for main menu , e to end");
+                printf("Enter c to continue , m for main menu , e to end: ");
                 c = getchar();
                 if (c == 'c')
                 {
@@ -88,6 +100,9 @@ void main(){
                 }
             }
     	}
+        else if(option == 3){
+            display();
+        }
     	else{
     	        if(mintos == -1){
     	         printf("No elements in stack\n");
