@@ -6,7 +6,6 @@ int *stack,tempstack[100],temptos=-1,tos=-1,n;
 void push(int item){
 	if(tos == n-1){
 		printf("Stack Overflow");
-		exit(0);	
 	}
 	else{
 		while(item<stack[tos] && tos!= -1){
@@ -23,7 +22,6 @@ void push(int item){
 int pop(){
 	if(tos < 0){
 		printf("Stack Underflow");
-		exit(0);
 	}
 	else{
 	 	return stack[tos--];
