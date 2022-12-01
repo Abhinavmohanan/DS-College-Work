@@ -7,29 +7,16 @@ typedef struct{
     int val;
 }sparse;
 
-void readtoSparse(sparse a[],int count){
-    int m,n,spar,element,k=1;
-    float sparsity;
-    printf("Enter no. of rows of matrix %d: ",count);
-    scanf("%d",&m);
-    printf("Enter no. of columns of matrix %d:",count);
-    scanf("%d",&n);
-    a[0].row = m;
-    a[0].col = n;
-    printf("Enter elements of matrix: \n");
-    for(int i =0;i<m;i++){
-        for(int j=0;j<n;j++){
-            scanf("%d",&element);
-            if(element != 0){
-                spar++;
-                a[k].row = i;
-                a[k].col = j;
-                a[k].val = element;
-                k++;
-            }
-        }
-    }
-    a[0].val = k-1;
+void readtoSparse(sparse a[]){
+  int n;
+  printf("Enter number of non zero values: ");
+  scanf("%d",&n);
+  printf("Matrix: \nRow\tCol\tVal\n");
+  for(int i =0;i<=a[0].val;i++){
+     scanf("%d",&a[i].row);
+     scanf("%d",&a[i].col);
+     scanf("%d",&a[i].val);
+  }
 }
 
 void printSparse(sparse a[]){
@@ -60,7 +47,8 @@ void transparse(sparse a[],sparse trans[]){
 
 void main(){
     sparse a[100],trans[100];
-    readtoSparse(a,1);
+    printf("Enter sparse matrix:\n");
+    readtoSparse(a);
     transparse(a,trans);
     printf("\n\nEntered Matrix: ");
     printSparse(a);
