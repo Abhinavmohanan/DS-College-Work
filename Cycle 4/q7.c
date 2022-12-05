@@ -6,7 +6,7 @@ void main(){
 	int data,option,after;
 	node *new;
 	do{
-		printf("\nEnter option to continue\n1.Add data\n2.Add after\n3.Add before\n4.Insert at position\n5.Delete data\n6.Display\n7.Exit\n");
+		printf("\nEnter option to continue\n1.Add data\n2.Add after\n3.Add before\n4.Insert at position\n5.Delete data\n6.Delete at\n7.Delete Smallest\n8.Display\n9.Exit\n");
 		scanf("%d",&option);
 		switch(option){
 		case 1:
@@ -45,13 +45,19 @@ void main(){
 			scanf("%d",&data);
 			printf("Deleting....");
 			delete_data(data);
+		case 6: printf("Enter position to delete: ");
+			scanf("%d",&data);
+			printf("Deleting....");
+			delete_atpos(data);
 			break;
-		case 6: display();
+		case 7: delete_smallest();
 			break;
-		case 7: printf("Exiting");
+		case 8: display();
+			break;
+		case 9: printf("Exiting");
 			break;
 		default: printf("Enter valid option");	
 		}
-	}while(option != 7);
+	}while(option != 9);
 
 }

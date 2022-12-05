@@ -144,6 +144,28 @@ void delete_atpos(int pos){
 		free(temp);
 }
 
+void delete_end(){
+		node *ptr;
+		node *temp;
+		ptr = head;
+		if(head == NULL){
+			printf("Empty Queue");
+			return;
+		}
+		if(head->next == NULL){
+			printf("Removed element : %d",head->data);
+			head = NULL;
+			return;
+		}
+		while(ptr->next != NULL){
+			temp = ptr;
+			ptr = ptr->next;
+		}
+		printf("Removed element : %d",ptr->data);
+		free(ptr);
+		temp->next = NULL;
+}
+
 void popfirst(){
 	node *ptr;
 	ptr = head;
